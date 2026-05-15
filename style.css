@@ -220,3 +220,89 @@ footer {
     }
 }
 
+.about {
+    padding: 100px 10%;
+    background-color: #0f0f0f; /* Um tom levemente diferente para separar as seções */
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Faz com que fique um embaixo do outro no celular */
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(20%); /* Estilo mais artístico */
+    border: 2px solid #00ff88;
+    box-shadow: 10px 10px 0px #00ff88; /* Detalhe visual moderno */
+}
+
+.about-content {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.section-title-left {
+    font-size: 2.5rem;
+    color: #00ff88;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.skills-tags span {
+    background: #222;
+    color: #00ff88;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #00ff88;
+    color: #000;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .about-wrapper {
+        text-align: center;
+        flex-direction: column;
+    }
+    .skills-tags {
+        justify-content: center;
+    }
+}
