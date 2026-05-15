@@ -90,9 +90,11 @@ nav ul li a:hover { color: var(--primary); }
 .portfolio-section h2 { margin-bottom: 3rem; font-size: 2rem; text-align: center; }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column; /* Força um embaixo do outro */
+    gap: 20px;              /* Espaçamento de 20px entre um card e outro */
+    align-items: center;    /* Centraliza os cards na tela (opcional) */
+    width: 100%;
 }
 
 /* Cards de Vídeo */
