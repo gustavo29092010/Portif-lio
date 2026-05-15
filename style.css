@@ -90,11 +90,9 @@ nav ul li a:hover { color: var(--primary); }
 .portfolio-section h2 { margin-bottom: 3rem; font-size: 2rem; text-align: center; }
 
 .grid-container {
-   display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* Alinha os cards ao início (ou 'center' se quiser no meio da tela) */
-    align-items: flex-start; 
+   display: block;       /* Mudamos de flex para block para garantir que nada estique */
+    width: fit-content;   /* O container só tem a largura do maior card */
+    margin: 0 auto;       /* Centraliza a galeria na tela */
 }
 
 /* Cards de Vídeo */
@@ -121,18 +119,17 @@ nav ul li a:hover { color: var(--primary); }
     overflow: hidden;
     cursor: pointer;
     
-    display: block;
-    /* Faz o card ter exatamente a largura da imagem original */
-    width: max-content;  
-    /* Impede o card de ficar maior que a tela em celulares */
-    max-width: 100%;     
-    height: max-content; 
+    display: table;       /* TRUQUE DE OURO: Força o card a ter EXATAMENTE o tamanho da imagem */
+    clear: both;          /* Garante que nenhum elemento fique do lado do outro */
+    margin-bottom: 20px;  /* Espaço entre um card e o de baixo */
 }
 
 .card-img img { 
-    width: 100%; 
-    height: auto;        /* Garante a proporção natural da imagem */
-    display: block;      /* Remove um espaço em branco de 4px que o navegador cria abaixo de imagens */
+    .card-img img { 
+    display: block;
+    width: 100%;
+    max-width: 350px;     /* DEFINE AQUI o tamanho máximo que você quer para as imagens */
+    height: auto;
     transition: transform 0.5s ease; 
 }
 
@@ -141,17 +138,19 @@ nav ul li a:hover { color: var(--primary); }
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 1rem 1rem 1rem; 
+    padding: 1.5rem 1rem 1rem 1rem; 
     background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    box-sizing: border-box;
     
     opacity: 0;
     transition: opacity 0.3s ease;
-    box-sizing: border-box; /* Crucial para o padding não empurrar o overlay para fora */
 }
 
 /* Hover */
 .card-img:hover img { transform: scale(1.1); }
 .card-img:hover .overlay { opacity: 1; }
+
+
 /* Footer */
 footer {
     text-align: center;
