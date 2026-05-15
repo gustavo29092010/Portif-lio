@@ -113,21 +113,22 @@ nav ul li a:hover { color: var(--primary); }
 }
 
 /* Cards de Imagem */
-/* Cards de Imagem */
 .card-img {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    /* Garante que o container tenha exatamente a altura da imagem inline */
-    display: inline-block; 
-    width: 100%; /* Ou o tamanho máximo que você desejar para o card */
+    
+    /* 1. FORÇA O CONTAINER A TER A ALTURA DA IMAGEM */
+    display: block; 
+    height: max-content; /* Diz ao navegador: "fique apenas do tamanho do seu conteúdo interno" */
+    align-self: start;   /* Se estiver no Flexbox/Grid, impede o card de esticar para baixo */
 }
 
 .card-img img { 
     width: 100%; 
-    height: auto; /* Mantém a proporção correta da imagem */
-    display: block; 
+    height: auto;        /* Garante a proporção natural da imagem */
+    display: block;      /* Remove um espaço em branco de 4px que o navegador cria abaixo de imagens */
     transition: transform 0.5s ease; 
 }
 
@@ -136,25 +137,17 @@ nav ul li a:hover { color: var(--primary); }
     bottom: 0;
     left: 0;
     width: 100%;
-    /* Um padding interno para o texto não colar nas bordas */
     padding: 2rem 1rem 1rem 1rem; 
-    /* O gradiente começa transparente e escurece na base, cobrindo só o necessário */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
     
     opacity: 0;
     transition: opacity 0.3s ease;
-    box-sizing: border-box; /* Garante que o padding não faça o overlay passar do tamanho do card */
+    box-sizing: border-box; /* Crucial para o padding não empurrar o overlay para fora */
 }
 
-/* Efeitos de Hover */
-.card-img:hover img { 
-    transform: scale(1.1); 
-}
-
-.card-img:hover .overlay { 
-    opacity: 1; 
-}
-
+/* Hover */
+.card-img:hover img { transform: scale(1.1); }
+.card-img:hover .overlay { opacity: 1; }
 /* Footer */
 footer {
     text-align: center;
