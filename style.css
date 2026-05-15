@@ -90,11 +90,11 @@ nav ul li a:hover { color: var(--primary); }
 .portfolio-section h2 { margin-bottom: 3rem; font-size: 2rem; text-align: center; }
 
 .grid-container {
-    display: flex;
-    flex-direction: column; /* Força um embaixo do outro */
-    gap: 20px;              /* Espaçamento de 20px entre um card e outro */
-    align-items: center;    /* Centraliza os cards na tela (opcional) */
-    width: 100%;
+   display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Alinha os cards ao início (ou 'center' se quiser no meio da tela) */
+    align-items: flex-start; 
 }
 
 /* Cards de Vídeo */
@@ -121,10 +121,12 @@ nav ul li a:hover { color: var(--primary); }
     overflow: hidden;
     cursor: pointer;
     
-    /* 1. FORÇA O CONTAINER A TER A ALTURA DA IMAGEM */
-    display: block; 
-    height: max-content; /* Diz ao navegador: "fique apenas do tamanho do seu conteúdo interno" */
-    align-self: start;   /* Se estiver no Flexbox/Grid, impede o card de esticar para baixo */
+    display: block;
+    /* Faz o card ter exatamente a largura da imagem original */
+    width: max-content;  
+    /* Impede o card de ficar maior que a tela em celulares */
+    max-width: 100%;     
+    height: max-content; 
 }
 
 .card-img img { 
