@@ -321,21 +321,43 @@ footer {
     }
 }
 
-.grid-container img:hover{
-    opacity:1.0;
-border:1px solid grey;
+/* Correção do Carrossel de Artes Visuais */
+
+/* 1. A section apenas define o espaçamento interno (padding) */
+.portfolio-section {
+    padding: 5rem 10%;
+    display: block; /* Remove o flex/overflow daqui para não dar conflito */
 }
 
-.grid-container{
-    display:flex;
+/* 2. O grid-container vira o verdadeiro carrossel horizontal */
+.grid-container {
+    display: flex;
     overflow-x: auto;
-    gap: 15px;
+    gap: 20px;
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não colar nas imagens */
+    scroll-snap-type: x mandatory; /* Deixa o scroll "magnético" e suave */
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem no celular */
 }
 
-.portfolio-section{
-    display:flex;
-    overflow-x: auto;
-    gap: 15px;
+/* 3. Garante que os cards não encolham dentro do carrossel */
+.grid-container .card-img {
+    flex: 0 0 300px; /* Não deixa o card esmagar, mantendo largura fixa de 300px */
+    scroll-snap-align: start; /* Alinha o card no início ao scrollar */
+}
+
+/* 4. Estilização Opcional: Deixar a barra de rolagem mais bonita e combinando com o site */
+.grid-container::-webkit-scrollbar {
+    height: 8px; /* Altura da barra horizontal */
+}
+
+.grid-container::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Cor do fundo da barra */
+    border-radius: 10px;
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+    background: var(--primary); /* O seu verde neon na barra de rolagem! */
+    border-radius: 10px;
 }
 
 h6{
