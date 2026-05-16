@@ -127,7 +127,7 @@ nav ul li a:hover { color: var(--primary); }
 }
 
 .card-img img { 
-    width: 100%; 
+    width: 40%; 
     height: auto;        /* Garante a proporção natural da imagem */
     display: block;      /* Remove um espaço em branco de 4px que o navegador cria abaixo de imagens */
     transition: transform 0.5s ease; 
