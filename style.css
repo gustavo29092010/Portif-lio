@@ -339,7 +339,11 @@ border:1px solid grey;
 }
 
 h2{
+     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-size: medium;
-    text color: #00ff88;
+    text-align: center;
+    padding: 0 10%;
 }
