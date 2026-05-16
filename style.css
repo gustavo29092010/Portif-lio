@@ -124,9 +124,6 @@ nav ul li a:hover { color: var(--primary); }
     height: max-content; /* Diz ao navegador: "fique apenas do tamanho do seu conteúdo interno" */
     align-self: start;   /* Se estiver no Flexbox/Grid, impede o card de esticar para baixo */
 
-     padding-left:20px;
-    padding-right:20px;
-    margin-top:50px;
 }
 
 .card-img img { 
@@ -135,9 +132,6 @@ nav ul li a:hover { color: var(--primary); }
     display: block;      /* Remove um espaço em branco de 4px que o navegador cria abaixo de imagens */
     transition: transform 0.5s ease; 
 
-     display:flex;
-    overflow-x: auto;
-    gap: 15px;
 }
 
 .overlay {
@@ -325,4 +319,9 @@ footer {
     .skills-tags {
         justify-content: center;
     }
+}
+
+.card-img img:hover{
+    opacity:1.0;
+border:1px solid grey;
 }
