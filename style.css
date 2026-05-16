@@ -151,20 +151,88 @@ nav ul li a:hover { color: var(--primary); }
 .card-img:hover img { transform: scale(1.1); }
 .card-img:hover .overlay { opacity: 1; }
 /* Footer */
+  
+/* Customização Avançada do Footer */
 footer {
     text-align: center;
-    padding: 5rem 10%;
+    padding: 6rem 10% 4rem 10%;
     background: #050505;
+    border-top: 1px solid #111; /* Linha sutil para separar do carrossel */
 }
 
-.social-links a {
-    color: var(--primary);
-    margin: 0 1rem;
+.contact-wrapper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-subtitle {
+    color: #888;
+    max-width: 500px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1rem;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajusta para telas pequenas */
+}
+
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
     text-decoration: none;
-    font-size: 1.1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.copy { margin-top: 2rem; font-size: 0.8rem; color: #555; }
+/* Estilo do Botão WhatsApp (Foco principal de conversão) */
+.btn-contact.whatsapp {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.btn-contact.whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+}
+
+/* Estilo do Botão Instagram (Secundário) */
+.btn-contact.instagram {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid #222;
+}
+
+.btn-contact.instagram:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.copy { 
+    margin-top: 4rem; 
+    font-size: 0.8rem; 
+    color: #444; 
+}
+
+/* Ajuste Mobile para os botões ocuparem a largura total se necessário */
+@media (max-width: 480px) {
+    .contact-buttons {
+        flex-direction: column;
+    }
+    .btn-contact {
+        justify-content: center;
+        width: 100%;
+    }
+}
 
 /* Mobile Responsivo */
 @media (max-width: 768px) {
