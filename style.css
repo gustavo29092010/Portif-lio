@@ -325,3 +325,15 @@ footer {
     opacity:1.0;
 border:1px solid grey;
 }
+
+.card-img{
+    display:flex;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+.grid-container{
+    display:flex;
+    overflow-x: auto;
+    gap: 15px;
+}
