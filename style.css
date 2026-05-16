@@ -337,3 +337,9 @@ border:1px solid grey;
     overflow-x: auto;
     gap: 15px;
 }
+
+h2{
+    align-items: center;
+    font-size: medium;
+    text color: #00ff88;
+}
