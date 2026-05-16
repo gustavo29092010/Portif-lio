@@ -339,7 +339,7 @@ border:1px solid grey;
 }
 
 h2{
-     height: 100vh;
+    font-size: small;
     display: flex;
     flex-direction: column;
     justify-content: center;
