@@ -123,6 +123,10 @@ nav ul li a:hover { color: var(--primary); }
     display: block; 
     height: max-content; /* Diz ao navegador: "fique apenas do tamanho do seu conteúdo interno" */
     align-self: start;   /* Se estiver no Flexbox/Grid, impede o card de esticar para baixo */
+
+     padding-left:20px;
+    padding-right:20px;
+    margin-top:50px;
 }
 
 .card-img img { 
